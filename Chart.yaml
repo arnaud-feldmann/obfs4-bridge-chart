@@ -1,0 +1,6 @@
+apiVersion: v2
+name: obfs4-bridge
+description: Un chart de relai intermédiaire pour Tor
+type: application
+version: 0.1.0
+

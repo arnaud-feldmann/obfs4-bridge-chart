@@ -1,0 +1,17 @@
+{{- if not .Values.bridge.existingClaim }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: obfs4-bridge
+  name: obfs4-data-pv-claim 
+  annotations:
+    helm.sh/resource-policy: keep
+spec:
+  storageClass: {{ .Values.bridge.storageClass }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+{{- end }}

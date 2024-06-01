@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: obfs4-bridge-nodeport
+  labels:
+    app: obfs4-bridge
+spec:
+  type: LoadBalancer
+  ports:
+    - name: orport
+      port: {{ .Values.bridge.orport }}
+      targetPort: {{ .Values.bridge.orport }}
+      nodePort: {{ .Values.bridge.orport }}
+      protocol: TCP
+    - name: ptport
+      port: {{ .Values.bridge.ptport }}
+      targetPort: {{ .Values.bridge.ptport }}
+      nodePort: {{ .Values.bridge.ptport }}
+      protocol: TCP
+  externalTrafficPolicy: Local
+  selector:
+    app: obfs4-bridge
