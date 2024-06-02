@@ -4,7 +4,7 @@ bridge:
   ptport: 31030
   nickname: UnNomDeRelai
   storageClass: "local-path"
-  existingClaim: true
+  existingClaim: false
   obfs4variables: 
     OBFS4_ENABLE_ADDITIONAL_VARIABLES: 1
     OBFS4V_AddressDisableIPv6: 1
