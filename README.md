@@ -1,1 +1,1 @@
-Un chart de relai intermédiaire Tor pour mes raspberry Pi 
+Un chart de bridge Tor pour mes raspberry Pi
