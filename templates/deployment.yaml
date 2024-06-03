@@ -46,6 +46,19 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/tor
               name: obfs4-bridge-data
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 101
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+          ressources:
+            {{- toYaml .Values.resources | nindent 12 }}
+
       restartPolicy: Always
       volumes:
         - name: obfs4-bridge-data
