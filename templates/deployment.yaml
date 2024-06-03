@@ -51,6 +51,7 @@ spec:
             runAsUser: 101
             seccompProfile:
               type: RuntimeDefault
+            allowPrivilegeEscalation: false
             capabilities:
               drop:
                 - ALL
