@@ -11,5 +11,3 @@ bridge:
     OBFS4V_RelayBandwidthRate: 100 Kbytes
     OBFS4V_RelayBandwidthBurst: 300 Kbytes
     OBFS4V_ExitPolicy: reject *:*
-    OBFS4V_ExitPolicy: reject6 *:*
-
