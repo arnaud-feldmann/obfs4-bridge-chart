@@ -5,7 +5,7 @@ metadata:
   labels:
     app: obfs4-bridge
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: orport
       port: {{ .Values.bridge.orport }}

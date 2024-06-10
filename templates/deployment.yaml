@@ -16,6 +16,8 @@ spec:
       labels:
         app: obfs4-bridge
     spec:
+      nodeSelector:
+        {{- toYaml .Values.nodeSelector | nindent 8 }}
       securityContext:
         fsGroup: 2000
       containers:
