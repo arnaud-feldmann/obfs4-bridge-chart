@@ -3,14 +3,17 @@ bridge:
   orport: 31001
   ptport: 31030
   nickname: UnNomDeRelai
-  storageClass: "local-path"
-  existingClaim: false
   obfs4variables: 
     OBFS4_ENABLE_ADDITIONAL_VARIABLES: 1
     OBFS4V_AddressDisableIPv6: 1
     OBFS4V_RelayBandwidthRate: 100 Kbytes
     OBFS4V_RelayBandwidthBurst: 300 Kbytes
     OBFS4V_ExitPolicy: reject *:*
+
+pvc:
+  existingClaim: true
+  storageClassName: longhorn
+  name: obfs4-data-pvc
 
 resources:
   limits:
